@@ -1,0 +1,19 @@
+{
+  "name": "parole",
+  "version": "1.0.0",
+  "description": "Dojo / Jogo parole para trabalhar logica de programação ",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicholasNeto/Parole.git"
+  },
+  "author": "Nicholas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NicholasNeto/Parole/issues"
+  },
+  "homepage": "https://github.com/NicholasNeto/Parole#readme"
+}

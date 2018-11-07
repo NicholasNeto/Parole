@@ -1,38 +1,35 @@
 
-function Board(tamanho) {
+function Board(sizeOfBoard) {
 
-  this.createBoard = function(tamanho){
-    var board = []
+  this.createBoard = function(sizeOfBoard){
+    let board = []
 
-    for(var contador = 0; contador <= tamanho - 1; contador++){
-       var temp = Array(tamanho)
+    for(let contador = 0; contador <= sizeOfBoard - 1; contador++){
+       let temp = Array(sizeOfBoard)
        board.push(temp)
     }
     return board
   }
 
   this.makeLatter = function() {
-    var text = "";
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    for (var i = 0; i < 1; i++)
+    let text = "";
+    let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    for (let i = 0; i < 1; i++)
       text += possible.charAt(Math.floor(Math.random() * possible.length));
 
     return text;
   }
 
   this.createBoardWithLetter = function(){
+    let board = this.createBoard(sizeOfBoard)
 
-    var board = this.createBoard(tamanho)
-
-    for(var linha = 0; linha < board.length; linha++) {
-
-      for(var posicao = 0; posicao < board[linha].length; posicao++){
+    for(let linha = 0; linha < board.length; linha++) {
+      for(let posicao = 0; posicao < board[linha].length; posicao++){
         board[linha][posicao] = this.makeLatter()
       }
     }
     return board
   }
-
 }
 
 module.exports = {Board}

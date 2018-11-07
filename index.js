@@ -1,9 +1,9 @@
-var Board = require('./Board/board').Board
+let Board = require('./Board/board').Board
 
-var tamanho = process.argv[2]
-var tamanho = parseInt(tamanho)
+var dataEntry = process.argv[2]
+var sizeOfBoard = parseInt(dataEntry)
 
-var board = new Board(tamanho)
-var board = board.createBoardWithLetter()
+var board = new Board(sizeOfBoard)
 
-console.log(board)
+
+console.log(board.createBoardWithLetter())

@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/NicholasNeto/Parole/issues"
   },
-  "homepage": "https://github.com/NicholasNeto/Parole#readme"
+  "homepage": "https://github.com/NicholasNeto/Parole#readme",
+  "dependencies": {
+    "dictcc-js": "^1.0.0"
+  }
 }

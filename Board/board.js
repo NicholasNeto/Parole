@@ -12,12 +12,8 @@ function Board(sizeOfBoard) {
   }
 
   this.makeLatter = function() {
-    let text = "";
-    let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    for (let i = 0; i < 1; i++)
-      text += possible.charAt(Math.floor(Math.random() * possible.length));
-
-    return text;
+    let letter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    return letter.charAt(Math.floor(Math.random() * letter.length));
   }
 
   this.createBoardWithLetter = function(){

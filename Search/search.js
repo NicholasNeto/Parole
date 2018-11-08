@@ -1,9 +1,9 @@
 
 var board =
 [
-  ["A","M","O","R","R","O","M","A"],
   ["A","L","E","G","R","I","A","M"],
-  ["A","L","E","G","R","I","A","M"]
+  ["A","M","O","R","R","O","M","A"],
+  ["A","M","O","R","R","O","M","A"]
 ];
 
 var data = "AMOR ALEGRIA PALAVRAS NOITE CADEIRA PROGRAMAÇÃO";
@@ -22,16 +22,24 @@ var readBoard = function(board, data) {
 
           var result = data.match(word)
 
-          console.log("palavra até aqgora", word)
-          console.log("resultado da paravra de 3 letras", result)
-
           if(result == null ){
-            return "não tem uma palavra nesta linha "
+            return "Isso não se tornara uma palavra"
+          }
+
+          console.log('preste atenção aqui', data.search(word + " "))
+
+          if (data.search(word + " ")   === -1) {
+            console.log("ok EU NÃO TENHO UMA PALAVRA MAS VOU CONTINUAR BUSCANDO")
+          } else {
+            return word
           }
         }
       }
     }
-    return word
-}
+  }
 
 console.log(readBoard(board, data))
+
+          //
+          // console.log("palavra até aqgora", word)
+          // console.log("resultado da paravra de 3 letras", result)

@@ -5,21 +5,20 @@ var board =
   ["A","L","E","G","R","I","A","M"]
 ];
 
-console.log(board)
+var data = "Amor Alegria Palavras Noite Cadeira Desistir Programação"
 
 var readBoard = function(board) {
-  console.log(board)
-  let word = ""
 
-  console.log(word)
+  let word = ""
 
     for(line in board) {
 
-      console.log('line: ', board[line])
-
-      for(let eachLetter = 0; eachLetter < 4; eachLetter++) {
+      for(let eachLetter = 0; eachLetter < board[line].lenght; eachLetter++) {
         word += board[line][eachLetter]
-        console.log('cada letra', word)
+
+        if(word.lenght >= 3) {
+          var result = data.match(word)
+        }
       }
     }
     return word

@@ -2,19 +2,14 @@
 var board =
 [
 
-  ["A","V","E","G","R","I","A","M","M"],
-  ["O","M","A","F","P","A","L","A","A"],
-  ["O","M","A","F","P","A","L","A","A"],
-  ["A","V","E","G","R","R","O","M","A"],
-  ["P","A","L","A", "V","R","A","S","Z"],
-  ["A","M","O","R","R","O","M","A","F"],
-  ["A","M","O","R","R","O","M","A","F"],
-  ["O","M","A","F","P","A","L","A","A"]
-
+  ["V","I","D","A"],
+  ["E","L","O","M"],
+  ["M","E","D","O"],
+  ["N","T","M","R"]
 
 ];
 
-var data = "AMOR ALEGRIA PALAVRAS NOITE CADEIRA PROGRAMAÇÃO";
+var data = "MOLE PALAVRAS VIDA  NOITE AMOR CADEIRA PROGRAMAÇÃO MEDO ";
 
 function Search(board, data) {
 
@@ -39,7 +34,7 @@ function Search(board, data) {
     for(line in board) {
       let word = ""
 
-      for(let eachLetter = board[line].length - 1; eachLetter > 0; eachLetter--) {
+      for(let eachLetter = board[line].length - 1; eachLetter >= 0; eachLetter--) {
         word += board[line][eachLetter]
 
         if(word.length >= 3) {
@@ -50,10 +45,26 @@ function Search(board, data) {
       }
     }
   }
-}
 
+  this.readBoardLineDow = function(){
+    for(posicao in board) {
+      let word = ""
+      for(linha in board){
+
+          word += board[linha][posicao]
+
+          if(word.length >= 3) {
+            if (data.search(word + " ") != -1) {
+              return word
+            }
+          }
+      }
+    }
+  }
+}
 var search = new Search(board, data)
 console.log(search.readBoardLineRight(board, data))
 console.log(search.readBoardLineLeft(board, data))
+console.log(search.readBoardLineDow(board, data))
 
 module.exports = { Search }

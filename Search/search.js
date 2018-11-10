@@ -46,7 +46,7 @@ function Search(board, data) {
     }
   }
 
-  this.readBoardLineDow = function(){
+  this.readBoardLineDown = function(){
     for(posicao in board) {
       let word = ""
       for(linha in board){
@@ -65,6 +65,6 @@ function Search(board, data) {
 var search = new Search(board, data)
 console.log(search.readBoardLineRight(board, data))
 console.log(search.readBoardLineLeft(board, data))
-console.log(search.readBoardLineDow(board, data))
+console.log(search.readBoardLineDown(board, data))
 
 module.exports = { Search }

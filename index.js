@@ -11,4 +11,4 @@ var read = new Read()
 
 
 console.log(board.createBoardWithLetter())
-// console.log(read.leitura())
+console.log(read.leitura())

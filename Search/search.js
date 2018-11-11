@@ -1,7 +1,7 @@
 
 var board =
 [
- 
+
   ["M","I","D","A","A"],
   ["O","L","O","M","A"],
   ["L","E","D","O","C"],
@@ -10,7 +10,7 @@ var board =
 
 ];
 
-var data = "MOLE PALAVRAS VIDA  NOITE AMOR VACA CADEIRA PROGRAMAÇÃO MEDO ";
+var data = ["MOLE", "PALAVRAS", "VIDA", "NOITE", "AMOR", "VACA", "CADEIRA","MEDO"]
 
 function Search(board, data) {
 
@@ -22,7 +22,7 @@ function Search(board, data) {
         word += board[line][eachLetter]
 
         if(word.length >= 3) {
-          if (data.search(word + " ") != -1) {
+          if (data.findIndex(isWord => isWord === word) != -1){
             return word
           }
         }
@@ -39,7 +39,7 @@ function Search(board, data) {
         word += board[line][eachLetter]
 
         if(word.length >= 3) {
-          if (data.search(word + " ") != -1) {
+          if (data.findIndex(isWord => isWord === word) != -1) {
             return word
           }
         }
@@ -55,14 +55,13 @@ function Search(board, data) {
           word += board[linha][posicao]
 
           if(word.length >= 3) {
-            if (data.search(word + " ") != -1) {
+            if (data.findIndex(isWord => isWord === word) != -1) {
               return word
             }
           }
       }
     }
   }
-
 
   this.readBoardLineTop = function(){
     for(posicao in board) {
@@ -72,7 +71,7 @@ function Search(board, data) {
         word += board[linha][posicao]
 
         if(word.length >= 3) {
-          if (data.search(word + " ") != -1) {
+          if (data.findIndex(isWord => isWord === word) != -1) {
             return word
           }
         }

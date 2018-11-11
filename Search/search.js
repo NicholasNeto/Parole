@@ -1,15 +1,16 @@
 
 var board =
 [
-
-  ["V","I","D","A"],
-  ["E","L","O","M"],
-  ["M","E","D","O"],
-  ["N","T","M","R"]
+ 
+  ["M","I","D","A","A"],
+  ["O","L","O","M","A"],
+  ["L","E","D","O","C"],
+  ["E","R","O","M","A"],
+  ["V","I","D","A","V"]
 
 ];
 
-var data = "MOLE PALAVRAS VIDA  NOITE AMOR CADEIRA PROGRAMAÇÃO MEDO ";
+var data = "MOLE PALAVRAS VIDA  NOITE AMOR VACA CADEIRA PROGRAMAÇÃO MEDO ";
 
 function Search(board, data) {
 
@@ -61,10 +62,28 @@ function Search(board, data) {
       }
     }
   }
+
+
+  this.readBoardLineTop = function(){
+    for(posicao in board) {
+      let word = ""
+
+      for(var linha = board[posicao].length -1; linha >= 0 ; linha--){
+        word += board[linha][posicao]
+
+        if(word.length >= 3) {
+          if (data.search(word + " ") != -1) {
+            return word
+          }
+        }
+      }
+    }
+  }
 }
 var search = new Search(board, data)
 console.log(search.readBoardLineRight(board, data))
 console.log(search.readBoardLineLeft(board, data))
 console.log(search.readBoardLineDown(board, data))
+console.log(search.readBoardLineTop(board, data))
 
 module.exports = { Search }
